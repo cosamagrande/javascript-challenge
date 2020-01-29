@@ -4,7 +4,7 @@
 var tableData = data;
 
 // TABLE WHERE DATA IS APPENDED AND CODE NEEDED FOR "LISTENING OF EVENTS"
-var tbody = d3.select("#target-table-display");
+var tbody = d3.select("#table-placement");
 var inputItem = d3.select("#datetime");
 var submitBtn = d3.select("#filter-btn");
 
