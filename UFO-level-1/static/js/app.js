@@ -15,34 +15,33 @@ tableData.forEach(object => {
 
         var tRow = tbody.append("tr");
 
-// Fetching object entries
+// Fetching object entries and adding rows
 
     Object.entries(object).forEach(([key,item]) => {
         
-        var tData = tRow.append("td");
+        tRow.append("td").text(item);
         
-// Adding rows to table
-        tData.text(item);
     });
 });
 
 
-// Function that allows for submittal of search request and search through date/time column
+// Function that allows for listening to request event and search through date/time column
 submitBtn.on("click", function() {
 
 // Clearing table upon new request      
     tbody.html("");
 
-// Selecting INPUT response 
+// Selecting INPUT request
     var inputResp = d3.select("#datetime");
     
-// Reading Input date
+// Reading Input resquest
     var inputItem = inputResp.property("value");
 
-    // console.log(inputItem);
+    console.log(inputItem);
 
 // Filtering tableData by input date
     var input = tableData.filter(selection => selection.datetime === inputItem);
+
     console.log(input)
 
 // Displaying Input response in html website
@@ -50,12 +49,11 @@ submitBtn.on("click", function() {
 
         var row = tbody.append("tr");
 
-//Using forEach to fetch entries
+//Using forEach to fetch entries and adding rows
         Object.entries(dates).forEach(([key,value]) => {
-            var cell = row.append("td");
+       
+            row.append("td").text(value);
 
-// Adding values to rows
-            cell.text(value);
         });
     });      
 });
